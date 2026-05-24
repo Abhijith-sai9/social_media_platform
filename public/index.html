@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect — Social Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="auth-screen" class="screen active">
+    <div class="auth-layout">
+      <aside class="auth-brand">
+        <h1>Connect</h1>
+        <p>Share moments, follow friends, and join the conversation.</p>
+      </aside>
+      <main class="auth-card card">
+        <div id="auth-tabs" class="tabs">
+          <button type="button" data-tab="login" class="active">Log in</button>
+          <button type="button" data-tab="register">Sign up</button>
+        </div>
+        <p id="auth-error" class="error" role="alert"></p>
+        <form id="login-form">
+          <label>Username or email<input type="text" name="login" required autocomplete="username"></label>
+          <label>Password<input type="password" name="password" required autocomplete="current-password"></label>
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </form>
+        <form id="register-form" class="hidden">
+          <label>Username<input type="text" name="username" required minlength="3" maxlength="30" pattern="[a-zA-Z0-9_]+" autocomplete="username"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
+          <label>Password<input type="password" name="password" required minlength="6" autocomplete="new-password"></label>
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <div id="app-screen" class="screen">
+    <header class="topbar">
+      <a href="#" class="logo" data-view="feed">Connect</a>
+      <nav id="main-nav"></nav>
+    </header>
+    <div class="layout">
+      <main class="feed-column">
+        <h1 id="page-title">Feed</h1>
+        <section id="composer" class="card composer hidden">
+          <form id="composer-form">
+            <textarea id="post-content" name="content" rows="3" placeholder="What's on your mind?" maxlength="2000" required></textarea>
+            <button type="submit" class="btn btn-primary">Post</button>
+          </form>
+        </section>
+        <div id="profile-view"></div>
+        <section id="posts-list" class="posts"></section>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
