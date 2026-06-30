@@ -22,7 +22,7 @@ npm install
 npm start
 ```
 
-Open[ [http://localhost:3000](http://localhost:3000)](https://codealpha-tasks-social-media-platform.onrender.com) in your browser.
+Open https://codealpha-tasks-social-media-platform.onrender.com in your browser.
 
 ## API overview
 
